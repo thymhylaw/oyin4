@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rectangle Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9966, #ff5e62);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: white;
+            width: 350px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border-color: #ff5e62;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff5e62;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e94b50;
+        }
+
+        #result {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff5e62;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <h2>Rectangle Calculator</h2>
+
+        <label>Length</label>
+        <input type="number" id="length" placeholder="Enter length">
+
+        <label>Breadth</label>
+        <input type="number" id="breadth" placeholder="Enter breadth">
+
+        <button onclick="calculate()">Calculate</button>
+
+        <p id="result"></p>
+
+    </div>
+
+    <script>
+        function calculate() {
+
+            let length = document.getElementById("length").value;
+            let breadth = document.getElementById("breadth").value;
+
+            let area = length * breadth;
+            let perimeter = 2 * (length + breadth);
+
+            document.getElementById("result").innerHTML =
+                "Area = " + area + "<br>" +
+                "Perimeter = " + perimeter;
+        }
+    </script>
+
+</body>
+</html>
